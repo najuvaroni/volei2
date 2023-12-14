@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>{{ Titulo }}</title>
+</head>
+{% with messages = get_flashed_messages() %}
+      {% if messages %}
+          <ul id="messages" class="list-unstyled">
+          {% for message in messages %}
+              <li class="alert alert-success">{{ message }}</li>
+          {% endfor %}
+          </ul>
+      {% endif %}
+{% endwith %}
+<body class="fundo">
+<div class="">
+          <h1>{{ Titulo }}</h1>
+      </div>
+    <div class="">
+        <div class="form">
+          <form class="formulario" action="/alterar" method="post">
+            <fieldset>
+              <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" class="form-control" value={{ volei.nome }}>
+              </div>
+              <div class="form-group">
+                <label for="idade">Idade</label>
+                <input type="text" id="idade" name="idade" class="form-control" value={{ volei.idade }}>
+              </div>
+              <div class="form-group">
+                <label for="posicao">Posição</label>
+                <input type="text" id="posicao" name="posicao" class="form-control" value={{ volei.posicao }}>
+              </div>
+              <div class="form-group">
+                <label for="nivel">Nível</label>
+                <input type="text" id="nivel" name="nivel" class="form-control" value={{ volei.nivel }}>
+              </div>
+               <div class="form-group">
+                <label for="cidade">Cidade/Estado</label>
+                <input type="text" id="cidade" name="cidade" class="form-control" value={{ volei.cidade }}>
+              </div>
+                <div class="form-group">
+                <label for="dia">Dia</label>
+                <input type="date" id="dia" name="dia" class="form-control" value={{ volei.dia }}>
+              </div>
+              <div class="form-group">
+                <label for="horario">Horário</label>
+                <input type="time" id="horario" name="horario" class="form-control" value={{ volei.horario }}>
+              </div>
+              <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
+            </fieldset>
+          </form>
+        </div>
+    </div>
+</body>
+</html>
